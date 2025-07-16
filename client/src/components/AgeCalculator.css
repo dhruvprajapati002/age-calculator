@@ -1,0 +1,110 @@
+.age-calculator-container {
+  height: 100vh;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #6b73ff, #a1c4fd);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.age-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+}
+
+.dark .age-card {
+  background: #2d3748;
+  color: #f7fafc;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.8rem;
+}
+
+.theme-toggle {
+  background: none;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.form {
+  margin-top: 1.2rem;
+}
+
+.form input[type="date"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.form input[type="date"]:focus {
+  border-color: #667eea;
+}
+
+.form button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #5a67d8;
+}
+
+.result, .countdown, .zodiac {
+  margin-top: 1.5rem;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.dark .form input[type=\"date\"] {
+  background: #4a5568;
+  color: #edf2f7;
+  border-color: #718096;
+}
+
+.dark .form button {
+  background: #4299e1;
+}
+
+.dark .form button:hover {
+  background: #3182ce;
+}
+
+.dark .result, .dark .countdown, .dark .zodiac {
+  background: #4a5568;
+  color: #e2e8f0;
+}
