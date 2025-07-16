@@ -82,7 +82,7 @@ export default function AgeCalculator() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!dob) return;
-    const res = await axios.post("http://localhost:5000/api/calculate-age", { dob });
+    const res = await axios.post("https://age-calculator-5e3i.onrender.com/", { dob });
     setAge(res.data);
     setNextBirthday(calculateNextBirthday(dob));
 
