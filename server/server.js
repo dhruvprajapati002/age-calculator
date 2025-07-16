@@ -3,6 +3,13 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://your-vercel-app.vercel.app"],
+  methods: "GET,POST",
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 
 app.post("/api/calculate-age", (req, res) => {
   const { dob } = req.body;
