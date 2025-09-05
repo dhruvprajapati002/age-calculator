@@ -1,0 +1,23 @@
+# docker-compose.yml - Updated
+version: '3.8'
+
+services:
+  age-calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: age-calculator-app
+    ports:
+      - "3000:80"  # Map host port 3000 to container port 80
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "com.example.description=Age Calculator React App"
+      - "com.example.version=1.0.0"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
